@@ -14,32 +14,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.kupujswiadomie.bean.SessionManager;
 import pl.kupujswiadomie.entity.Producer;
+import pl.kupujswiadomie.entity.Product;
 import pl.kupujswiadomie.repository.ProducerRepository;
+import pl.kupujswiadomie.repository.ProductRepository;
 
 @Controller
-@RequestMapping("/producer")
-public class ProducerController {
+@RequestMapping("/product")
+public class ProductController {
 
 	@Autowired
-	private ProducerRepository producerRepo;
+	private ProductRepository productRepo;
 
 	@GetMapping("/add")
-	public String addProducer(Model m) {
+	public String addProduct(Model m) {
 		HttpSession s = SessionManager.session();
 		if (s.getAttribute("user") != null) {
-			m.addAttribute("producer", new Producer());
-			return "producer/addproducer";
+			m.addAttribute("product", new Product());
+			return "product/addproduct";
 		} else {
 			return "redirect:/login";
 		}
 	}
 
 	@PostMapping("/add")
-	public String addProducerPost(@Valid @ModelAttribute Producer producer, BindingResult bindingResult) {
+	public String addProducerPost(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return "redirect:/addproducer";
+			return "redirect:/addproduct";
 		}
-		this.producerRepo.save(producer);
+		this.productRepo.save(product);
 		return "redirect:/";
 	}
 }
