@@ -7,11 +7,15 @@
 	<c:choose>
 		<c:when test="${sessionScope.user==null}">
 			Menu -> <a href="http://localhost:8080/Aware_shopping/">Strona glowna</a> | 
+			<a href="http://localhost:8080/Aware_shopping/products">Baza produktów</a> |
+			<a href="http://localhost:8080/Aware_shopping/producers">Producenci</a> |
 			<a href="http://localhost:8080/Aware_shopping/register">Zarejestruj sie!</a> |
 			<a href="http://localhost:8080/Aware_shopping/login">Zaloguj sie</a>
 		</c:when>
 		<c:otherwise>
 			Menu -> <a href="http://localhost:8080/Aware_shopping/">Strona glowna</a> |
+			<a href="http://localhost:8080/Aware_shopping/products">Baza produktów</a> |
+			<a href="http://localhost:8080/Aware_shopping/producers">Producenci</a> |
 			<a href="http://localhost:8080/Aware_shopping/${sessionScope.user.username}">Twój profil </a> |
 	 		<a href="http://localhost:8080/Aware_shopping/logout">Wyloguj</a>
 		</c:otherwise>
