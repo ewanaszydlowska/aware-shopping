@@ -13,7 +13,8 @@
 	<%@ include file="../jspf/header.jspf"%>
 	<%@ include file="../jspf/main_menu.jspf"%>
 
-	Tu będzie lista producentów...
+	<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj producenta</a>
+	<h1>Tu będzie lista producentów...</h1>	
 
 	<%@ include file="../jspf/footer.jspf"%>
 

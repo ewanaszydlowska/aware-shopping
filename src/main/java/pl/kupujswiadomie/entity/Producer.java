@@ -37,6 +37,7 @@ public class Producer {
 	
 	public Producer() {
 		super();
+		this.created = new Date();
 	}
 
 	public int getId() {

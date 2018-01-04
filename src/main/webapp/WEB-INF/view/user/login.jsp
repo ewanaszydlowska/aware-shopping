@@ -13,15 +13,16 @@
 	<%@ include file="../jspf/header.jspf"%>
 	<%@ include file="../jspf/main_menu.jspf"%>
 
+	<h3>Zaloguj się, aby móc dodawać produkty!</h3>
 	<form:form method="post" modelAttribute="loginData">
 		<p>
-			Email:
-			<form:input type="text" path="username" /> 
+			Nazwa użytkownika:
+			<form:input type="text" path="username" />
 			<form:errors path="username" />
 		</p>
 		<p>
-			Password
-			<form:input type="password" path="password" /> 
+			Hasło:
+			<form:input type="password" path="password" />
 			<form:errors path="password" />
 		</p>
 
