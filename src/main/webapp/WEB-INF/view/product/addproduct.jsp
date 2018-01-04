@@ -10,6 +10,8 @@
 <title>Add user</title>
 </head>
 <body>
+	<%@ include file="../jspf/header.jspf"%>
+	<%@ include file="../jspf/main_menu.jspf"%>
 	Stwórz nowy produkt:
 	<form:form method="post" modelAttribute="product">
 		<p>
@@ -62,5 +64,7 @@
 			<input type="submit" value="Submit" />
 		</p>
 	</form:form>
+	
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>
