@@ -6,4 +6,6 @@ import pl.kupujswiadomie.entity.Producer;
 
 public interface ProducerRepository extends JpaRepository<Producer, Integer> {
 
+	Producer findById(int parseInt);
+
 }

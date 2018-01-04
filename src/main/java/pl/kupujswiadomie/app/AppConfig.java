@@ -23,6 +23,10 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import pl.kupujswiadomie.converter.CategoryConverter;
+import pl.kupujswiadomie.converter.ProducerConverter;
+import pl.kupujswiadomie.converter.SubcategoryConverter;
+
 //import pl.coderslab.exam6.converter.UserConverter;
 
 
@@ -61,15 +65,27 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		return tm;
 	}
 
-//	@Override
-//	public void addFormatters(FormatterRegistry registry) {
-//		registry.addConverter(getUserConverter());
-//	}
-//	
-//	@Bean
-//	public UserConverter getUserConverter() {
-//		return new UserConverter();
-//	}
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(getCategoryConverter());
+		registry.addConverter(getSubcategoryConverter());
+		registry.addConverter(getProducerConverter());
+	}
+	
+	@Bean
+	public CategoryConverter getCategoryConverter() {
+		return new CategoryConverter();
+	}
+	
+	@Bean
+	public SubcategoryConverter getSubcategoryConverter() {
+		return new SubcategoryConverter();
+	}
+	
+	@Bean
+	public ProducerConverter getProducerConverter() {
+		return new ProducerConverter();
+	}
 
 	@Bean(name = "localeResolver")
 	public LocaleContextResolver getLocaleContextResolver() {

@@ -1,5 +1,7 @@
 package pl.kupujswiadomie.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -13,10 +15,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.kupujswiadomie.bean.SessionManager;
+import pl.kupujswiadomie.entity.Category;
 import pl.kupujswiadomie.entity.Producer;
 import pl.kupujswiadomie.entity.Product;
+import pl.kupujswiadomie.entity.Store;
+import pl.kupujswiadomie.entity.User;
+import pl.kupujswiadomie.repository.CategoryRepository;
 import pl.kupujswiadomie.repository.ProducerRepository;
 import pl.kupujswiadomie.repository.ProductRepository;
+import pl.kupujswiadomie.repository.StoreRepository;
 
 @Controller
 @RequestMapping("/product")
@@ -24,6 +31,15 @@ public class ProductController {
 
 	@Autowired
 	private ProductRepository productRepo;
+	
+	@Autowired
+	private ProducerRepository producerRepo;
+	
+	@Autowired
+	private StoreRepository storeRepo;
+	
+	@Autowired
+	private CategoryRepository categoryRepo;
 
 	@GetMapping("/add")
 	public String addProduct(Model m) {
@@ -41,7 +57,25 @@ public class ProductController {
 		if (bindingResult.hasErrors()) {
 			return "redirect:/addproduct";
 		}
+		HttpSession s = SessionManager.session();
+		User u = (User)s.getAttribute("user");
+		product.setCreatedBy(u);
 		this.productRepo.save(product);
 		return "redirect:/";
+	}
+	
+	@ModelAttribute("availableProducers")
+	public List<Producer> getAllProducers() {
+		return this.producerRepo.findAll();
+	}
+	
+	@ModelAttribute("availableStores")
+	public List<Store> getAllStores() {
+		return this.storeRepo.findAll();
+	}
+	
+	@ModelAttribute("availableCategories")
+	public List<Category> getAllCategories() {
+		return this.categoryRepo.findAll();
 	}
 }

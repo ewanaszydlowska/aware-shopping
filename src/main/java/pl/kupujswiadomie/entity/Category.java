@@ -30,7 +30,7 @@ public class Category {
 	private String name;
 	
 	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Subcategory> subcategory = new ArrayList<>();
+	private List<Subcategory> subcategories = new ArrayList<>();
 	
 	public Category() {
 		super();
@@ -52,12 +52,12 @@ public class Category {
 		this.name = name;
 	}
 
-	public List<Subcategory> getSubcategory() {
-		return subcategory;
+	public List<Subcategory> getSubcategories() {
+		return subcategories;
 	}
 
-	public void setSubcategory(List<Subcategory> subcategory) {
-		this.subcategory = subcategory;
+	public void setSubcategories(List<Subcategory> subcategories) {
+		this.subcategories = subcategories;
 	}
 	
 }

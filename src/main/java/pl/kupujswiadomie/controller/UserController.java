@@ -56,7 +56,7 @@ public class UserController {
 			return "redirect:/";
 		}
 		m.addAttribute("message", "Wprowadz poprawne dane");
-		return "login";
+		return "user/login";
 	}
 	
 	@GetMapping("/logout")

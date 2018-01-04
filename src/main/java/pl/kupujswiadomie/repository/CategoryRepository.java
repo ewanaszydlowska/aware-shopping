@@ -6,4 +6,5 @@ import pl.kupujswiadomie.entity.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
+	public Category findById(Integer id);
 }

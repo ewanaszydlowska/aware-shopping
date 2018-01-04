@@ -48,7 +48,7 @@ public class Product {
 	private Producer producer;
 	
 	@ManyToMany
-	private List<Store> shops;
+	private List<Store> stores;
 	
 	@ManyToOne
 	private User createdBy;
@@ -124,12 +124,12 @@ public class Product {
 		this.producer = producer;
 	}
 
-	public List<Store> getShops() {
-		return shops;
+	public List<Store> getStores() {
+		return stores;
 	}
 
-	public void setShops(List<Store> shops) {
-		this.shops = shops;
+	public void setStores(List<Store> stores) {
+		this.stores = stores;
 	}
 
 	public User getCreatedBy() {

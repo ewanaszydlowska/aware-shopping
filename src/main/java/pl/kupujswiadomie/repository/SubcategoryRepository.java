@@ -6,4 +6,6 @@ import pl.kupujswiadomie.entity.Subcategory;
 
 public interface SubcategoryRepository extends JpaRepository<Subcategory, Integer> {
 
+	Subcategory findById(int id);
+
 }
