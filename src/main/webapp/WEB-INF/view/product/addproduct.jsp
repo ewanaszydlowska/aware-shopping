@@ -58,7 +58,12 @@
 			</form:select>
 			<form:errors path="producer" />
 		</p>
-
+			Gdzie można go dostać:
+			<form:select type="text" path="stores">
+				<form:options items="${availableStores}" itemValue="id"
+					itemLabel="name" multiple="true" />
+			</form:select>
+			<form:errors path="stores" />
 		<p>
 			<input type="submit" value="Submit" />
 		</p>

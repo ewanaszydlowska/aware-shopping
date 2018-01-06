@@ -1,10 +1,15 @@
 package pl.kupujswiadomie.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -24,6 +29,9 @@ public class Store {
 	private String name;
 	
 	private boolean comingFromPL;
+	
+	@ManyToMany(mappedBy = "stores", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Product> products;
 	
 //	private Image logo;
 	
@@ -45,6 +53,22 @@ public class Store {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean isComingFromPL() {
+		return comingFromPL;
+	}
+
+	public void setComingFromPL(boolean comingFromPL) {
+		this.comingFromPL = comingFromPL;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	
 }

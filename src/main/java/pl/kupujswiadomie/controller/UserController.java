@@ -40,6 +40,11 @@ public class UserController {
 		this.userRepo.save(user);
 		return "redirect:/";
 	}
+	
+	@GetMapping("/rules")
+	public String rules() {
+		return "user/rules";
+	}
 
 	@GetMapping("/login")
 	public String login(Model m) {

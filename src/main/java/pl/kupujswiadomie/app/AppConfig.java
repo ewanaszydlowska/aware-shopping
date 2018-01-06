@@ -25,6 +25,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 import pl.kupujswiadomie.converter.CategoryConverter;
 import pl.kupujswiadomie.converter.ProducerConverter;
+import pl.kupujswiadomie.converter.StoreConverter;
 import pl.kupujswiadomie.converter.SubcategoryConverter;
 
 //import pl.coderslab.exam6.converter.UserConverter;
@@ -70,6 +71,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		registry.addConverter(getCategoryConverter());
 		registry.addConverter(getSubcategoryConverter());
 		registry.addConverter(getProducerConverter());
+		registry.addConverter(getStoreConverter());
 	}
 	
 	@Bean
@@ -85,6 +87,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public ProducerConverter getProducerConverter() {
 		return new ProducerConverter();
+	}
+	
+	@Bean
+	public StoreConverter getStoreConverter() {
+		return new StoreConverter();
 	}
 
 	@Bean(name = "localeResolver")

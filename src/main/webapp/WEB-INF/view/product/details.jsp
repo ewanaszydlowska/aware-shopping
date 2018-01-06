@@ -13,12 +13,17 @@
 	<%@ include file="../jspf/header.jspf"%>
 	<%@ include file="../jspf/main_menu.jspf"%>
 
-	<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj producenta</a>
-	<ul>Producenci</ul>
-	<c:forEach items="${availableProducers}" var="producer">
-			<li><a href="http://localhost:8080/Aware_shopping/producer/${producer.id}">${producer.name}</a></li>
-		</c:forEach>	
+	<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj produkt</a>
 
+	<h3>${product.name}</h3>
+	<p>${product.description}</p>
+	
+	Gdzie można dostać ${product.name}:
+		<c:forEach items="${stores}" var="store">
+			<li>${store.name}</li>
+		</c:forEach>
+		
+	<p>Dodany przez: ${product.createdBy.username}</p>
 	<%@ include file="../jspf/footer.jspf"%>
 
 

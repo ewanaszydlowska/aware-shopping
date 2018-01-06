@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -70,6 +71,15 @@ public class ProductController {
 		this.productRepo.save(product);
 		m.addAttribute("message", "Dodano produkt do bazy.");
 		return "redirect:/";
+	}
+	
+	@GetMapping("/{id}")
+	public String productDetails(@PathVariable int id, Model m) {
+		Product product = this.productRepo.findById(id);
+		m.addAttribute("product", product);
+		List<Store> stores = this.storeRepo.findAllByProductId(product.getId());
+		m.addAttribute("stores", stores);
+		return "product/details";
 	}
 	
 	@ModelAttribute("availableProducers")

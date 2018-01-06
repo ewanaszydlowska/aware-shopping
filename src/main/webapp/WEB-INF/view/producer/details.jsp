@@ -14,9 +14,11 @@
 	<%@ include file="../jspf/main_menu.jspf"%>
 
 	<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj producenta</a>
-	<ul>Producenci</ul>
-	<c:forEach items="${availableProducers}" var="producer">
-			<li><a href="http://localhost:8080/Aware_shopping/producer/${producer.id}">${producer.name}</a></li>
+	<h3>${producer.name}</h3>
+	<p>${producer.description}</p>
+	Produkty tego producenta:
+		<c:forEach items="${products}" var="product">
+			<li><a href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a></li>
 		</c:forEach>	
 
 	<%@ include file="../jspf/footer.jspf"%>
