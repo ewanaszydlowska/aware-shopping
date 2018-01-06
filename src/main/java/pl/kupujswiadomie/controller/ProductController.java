@@ -1,5 +1,6 @@
 package pl.kupujswiadomie.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -19,11 +20,13 @@ import pl.kupujswiadomie.entity.Category;
 import pl.kupujswiadomie.entity.Producer;
 import pl.kupujswiadomie.entity.Product;
 import pl.kupujswiadomie.entity.Store;
+import pl.kupujswiadomie.entity.Subcategory;
 import pl.kupujswiadomie.entity.User;
 import pl.kupujswiadomie.repository.CategoryRepository;
 import pl.kupujswiadomie.repository.ProducerRepository;
 import pl.kupujswiadomie.repository.ProductRepository;
 import pl.kupujswiadomie.repository.StoreRepository;
+import pl.kupujswiadomie.repository.SubcategoryRepository;
 
 @Controller
 @RequestMapping("/product")
@@ -40,6 +43,9 @@ public class ProductController {
 	
 	@Autowired
 	private CategoryRepository categoryRepo;
+	
+	@Autowired
+	private SubcategoryRepository subcategoryRepo;
 
 	@GetMapping("/add")
 	public String addProduct(Model m) {
@@ -53,14 +59,16 @@ public class ProductController {
 	}
 
 	@PostMapping("/add")
-	public String addProducerPost(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
+	public String addProducerPost(Model m, @Valid @ModelAttribute Product product, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return "redirect:/addproduct";
+			return "product/addproduct";
 		}
 		HttpSession s = SessionManager.session();
 		User u = (User)s.getAttribute("user");
 		product.setCreatedBy(u);
+		product.setCreated(new Date());
 		this.productRepo.save(product);
+		m.addAttribute("message", "Dodano produkt do bazy.");
 		return "redirect:/";
 	}
 	
@@ -77,5 +85,10 @@ public class ProductController {
 	@ModelAttribute("availableCategories")
 	public List<Category> getAllCategories() {
 		return this.categoryRepo.findAll();
+	}
+	
+	@ModelAttribute("availableSubcategories")
+	public List<Subcategory> getAllSubcategories() {
+		return this.subcategoryRepo.findAll();
 	}
 }
