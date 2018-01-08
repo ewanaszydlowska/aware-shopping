@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<p>Kategorie</p>
+
+			<ul><a href="http://localhost:8080/Aware_shopping/category/1">Elektronika</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/1">Komputery</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/2">RTV</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/3">AGD</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/4">Telefony i akcesoria</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/5">Inne</a></li>
+				
+			<ul><a href="http://localhost:8080/Aware_shopping/category/2">Moda</a></ul><li><a href="http://localhost:8080/Aware_shopping/subcategory/1">Komputery</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/6">Odzież</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/7">Obuwie</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/8">Dodatki</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/9">Inne</a></li>
+				
+			<ul><a href="http://localhost:8080/Aware_shopping/category/3">Dom i ogród</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/10">Wyposażenie</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/11">Przybory kuchenne</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/12">Meble</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/13">Ogród</a></li>
+				
+			
+			<ul><a href="http://localhost:8080/Aware_shopping/category/4">Dziecko</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/14">Akcesoria</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/15">Artykuły szkolne</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/16">Odzież i obuwie dziecięce</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/17">Inne</a></li>
+				
+			<ul><a href="http://localhost:8080/Aware_shopping/category/5">Kultura i rozrywka</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/18">Gry planszowe</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/19">Gry komputerowe</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/20">Instrumenty</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/21">Inne</a></li>
+				
+				
+			<ul><a href="http://localhost:8080/Aware_shopping/category/6">Motoryzacja</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/22">Części samochodowe</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/23">Opony</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/24">Inne</a></li>
+				
+			
+			<ul><a href="http://localhost:8080/Aware_shopping/category/7">Sport i wypoczynek</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/25">Turystyka</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/26">Akcesoria sportowe</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/27">Siłownia i fitness</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/28">Inne</a></li>
+				
+			<ul><a href="http://localhost:8080/Aware_shopping/category/8">Uroda i zdrowie</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/29">Makijaż</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/30">Kosmetyki pielęgnacyjne</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/31">Leki</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/32">Suplementy diety</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/33">Inne</a></li>
+				
+			<ul><a href="http://localhost:8080/Aware_shopping/category/9">Żywność</a></ul>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/34">Napoje</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/35">Przetwory</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/36">Słodycze i przekąski</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/37">Nabiał</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/38">Produkty zbożowe</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/39">Przyprawy i dodatki</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/40">Wyroby mięsne</a></li>
+				<li><a href="http://localhost:8080/Aware_shopping/subcategory/41">Inne</a></li>
+				

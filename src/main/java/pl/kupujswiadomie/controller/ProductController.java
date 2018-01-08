@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +83,51 @@ public class ProductController {
 		return "product/details";
 	}
 	
+	@GetMapping("edit/{id}")
+	@Transactional
+	public String edit(Model m, @PathVariable int id) {
+		HttpSession s = SessionManager.session();
+		User activeUser = (User)s.getAttribute("user");
+		Product product = this.productRepo.findById(id);
+		if (activeUser.getUsername().equals(product.getCreatedBy().getUsername())) {
+			m.addAttribute("product", product);
+			return "product/addproduct";
+		} else {
+			m.addAttribute("message", "Nie możesz edytować tego produktu!");
+//			s.setAttribute("message", "Nie możesz edytować tego produktu!");
+			return "redirect:/product/"+id;
+		}
+	}
+
+	@PostMapping("edit/{id}")
+	public String editPost(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "product/addproduct";
+		}
+		HttpSession s = SessionManager.session();
+		User u = (User)s.getAttribute("user");
+		product.setCreatedBy(u);
+		this.productRepo.save(product);
+		return "redirect:/products";
+	}
+	
+	@GetMapping("delete/{id}")
+	@Transactional
+	public String delete(Model m, @PathVariable int id) {
+		HttpSession s = SessionManager.session();
+		User activeUser = (User)s.getAttribute("user");
+		Product product = this.productRepo.findById(id);
+		if (activeUser.getUsername().equals(product.getCreatedBy().getUsername())) {
+			this.productRepo.delete(product);
+			m.addAttribute("message", "Usunięto wybrany produkt.");
+			return "redirect:/products";
+		} else {
+			m.addAttribute("message", "Nie możesz usunąć tego produktu!");
+//			s.setAttribute("message", "Nie możesz edytować tego produktu!");
+			return "redirect:/product/"+id;
+		}
+	}
+	
 	@ModelAttribute("availableProducers")
 	public List<Producer> getAllProducers() {
 		return this.producerRepo.findAll();
@@ -101,4 +147,11 @@ public class ProductController {
 	public List<Subcategory> getAllSubcategories() {
 		return this.subcategoryRepo.findAll();
 	}
+	
+	@ModelAttribute("ByFirstCategory")
+	public List<Subcategory> getFirstSubcategories() {
+		return this.subcategoryRepo.findByCategoryId();
+	}
+	
+	
 }

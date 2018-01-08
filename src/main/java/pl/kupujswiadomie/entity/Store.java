@@ -30,7 +30,7 @@ public class Store {
 	
 	private boolean comingFromPL;
 	
-	@ManyToMany(mappedBy = "stores", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private List<Product> products;
 	
 //	private Image logo;

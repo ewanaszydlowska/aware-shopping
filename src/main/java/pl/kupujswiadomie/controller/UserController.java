@@ -1,5 +1,7 @@
 package pl.kupujswiadomie.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import pl.kupujswiadomie.bean.LoginData;
 import pl.kupujswiadomie.bean.SessionManager;
+import pl.kupujswiadomie.entity.Product;
 import pl.kupujswiadomie.entity.User;
+import pl.kupujswiadomie.repository.ProductRepository;
 import pl.kupujswiadomie.repository.UserRepository;
 
 @Controller
@@ -22,9 +26,9 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepo;
-
+	
 	@Autowired
-	private SessionManager sessionManager;
+	private ProductRepository productRepo;
 
 	@GetMapping("/register")
 	public String register(Model m) {
@@ -75,9 +79,17 @@ public class UserController {
 	
 	@GetMapping("/{username}")
 	public String showProfile(@PathVariable String username, Model m) {
-		m.addAttribute("user", this.userRepo.findOneByUsername(username));
-		
+		User user = this.userRepo.findOneByUsername(username);
+		List<Product> userProducts = this.productRepo.findAllByCreatedBy(user);
+		m.addAttribute("user", user);
+		m.addAttribute("products", userProducts);
 		return "user/profile";
+	}
+	
+	@GetMapping("/edituser/{username}")
+	public String editPassword(@PathVariable int id) {
+		
+		return "user/edit";
 	}
 
 }

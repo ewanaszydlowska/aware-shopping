@@ -15,10 +15,12 @@
 
 	<h3>Profil użytkownika ${user.username}</h3>
 	<p>Adres e-mail: ${user.email}</p>
-	<p>Produkty dodane przez użytkownika: ...</p>
+	<p>Produkty dodane przez użytkownika:</p>
+	<c:forEach items="${products}" var="product">
+			<li><a href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a></li>
+		</c:forEach>	
 	
-	
-
+	<p><a href="http://localhost:8080/Aware_shopping/edituser/${user.username}">Edytuj hasło</a></p>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

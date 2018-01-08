@@ -12,6 +12,7 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<%@ include file="../jspf/main_menu.jspf"%>
+	<%@ include file="../jspf/categories.jspf"%>
 
 	<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj produkt</a>
 
@@ -24,6 +25,19 @@
 		</c:forEach>
 		
 	<p>Dodany przez: ${product.createdBy.username}</p>
+	
+	<c:choose>
+		<c:when test="${sessionScope.user.username==product.createdBy.username}">
+			<a href="http://localhost:8080/Aware_shopping/product/edit/${product.id}">Edytuj produkt</a>
+			<a href="http://localhost:8080/Aware_shopping/product/delete/${product.id}">Usuń produkt</a>
+		</c:when>
+	</c:choose>
+	<p>${message}</p>	
+	
+	
+	
+	
+		
 	<%@ include file="../jspf/footer.jspf"%>
 
 

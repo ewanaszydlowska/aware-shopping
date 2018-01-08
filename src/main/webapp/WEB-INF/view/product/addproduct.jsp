@@ -30,7 +30,8 @@
 		<p>
 			Subkategoria:
 			<form:select type="text" path="subcategory" class="subcategory">
-				
+				<form:options items="${ByFirstCategory}" itemValue="id"
+					itemLabel="name" />
 			</form:select>
 			<form:errors path="subcategory" />
 		</p>
@@ -87,6 +88,7 @@
 	        }).done(function (subcategories) {
 	        	 console.log(subcategories);
 	        	 var subcats = $('.subcategory');
+		    	 subcats.empty();
 	        	 
 		    	 subcategories.forEach(function(subcategory) {
 			    	 subcats.append('<option value=' + subcategory.id + '>' + subcategory.name + '</option>');          

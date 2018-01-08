@@ -3,6 +3,7 @@ package pl.kupujswiadomie.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +59,22 @@ public class ProducerController {
 		List<Product> products = this.productRepo.findByProducer(producer);
 		m.addAttribute("products", products);
 		return "producer/details";
+	}
+	
+	@GetMapping("edit/{id}")
+	@Transactional
+	public String edit(Model m, @PathVariable int id) {
+		Producer producer = this.producerRepo.findById(id);
+		m.addAttribute("producer", producer);
+		return "producer/addproducer";
+	}
+
+	@PostMapping("edit/{id}")
+	public String editPost(@Valid @ModelAttribute Producer producer, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "producer/addproducer";
+		}
+		this.producerRepo.save(producer);
+		return "redirect:/producers";
 	}
 }

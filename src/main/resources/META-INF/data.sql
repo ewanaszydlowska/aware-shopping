@@ -44,6 +44,7 @@ INSERT INTO subcategory (name, category_id) VALUES ('Inne', 1);
 INSERT INTO subcategory (name, category_id) VALUES ('Odziez', 2);
 INSERT INTO subcategory (name, category_id) VALUES ('Obuwie', 2);
 INSERT INTO subcategory (name, category_id) VALUES ('Dodatki', 2);
+INSERT INTO subcategory (name, category_id) VALUES ('Inne', 2);
 
 INSERT INTO subcategory (name, category_id) VALUES ('Wyposazenie', 3);
 INSERT INTO subcategory (name, category_id) VALUES ('Przybory kuchenne', 3);
@@ -53,10 +54,12 @@ INSERT INTO subcategory (name, category_id) VALUES ('Ogrod', 3);
 INSERT INTO subcategory (name, category_id) VALUES ('Akcesoria', 4);
 INSERT INTO subcategory (name, category_id) VALUES ('Artykuly szkolne', 4);
 INSERT INTO subcategory (name, category_id) VALUES ('Odziez i obuwie dzieciece', 4);
+INSERT INTO subcategory (name, category_id) VALUES ('Inne', 4);
 
 INSERT INTO subcategory (name, category_id) VALUES ('Gry planszowe', 5);
 INSERT INTO subcategory (name, category_id) VALUES ('Gry komputerowe', 5);
 INSERT INTO subcategory (name, category_id) VALUES ('Instrumenty', 5);
+INSERT INTO subcategory (name, category_id) VALUES ('Inne', 5);
 
 INSERT INTO subcategory (name, category_id) VALUES ('Czesci samochodowe', 6);
 INSERT INTO subcategory (name, category_id) VALUES ('Opony', 6);
@@ -76,7 +79,7 @@ INSERT INTO subcategory (name, category_id) VALUES ('Inne', 8);
 INSERT INTO subcategory (name, category_id) VALUES ('Napoje', 9);
 INSERT INTO subcategory (name, category_id) VALUES ('Przetwory', 9);
 INSERT INTO subcategory (name, category_id) VALUES ('Słodycze i przekaski', 9);
-INSERT INTO subcategory (name, category_id) VALUES ('Nabiał', 9);
+INSERT INTO subcategory (name, category_id) VALUES ('Nabial', 9);
 INSERT INTO subcategory (name, category_id) VALUES ('Produkty zbozowe', 9);
 INSERT INTO subcategory (name, category_id) VALUES ('Przyprawy i dodatki', 9);
 INSERT INTO subcategory (name, category_id) VALUES ('Wyroby miesne', 9);

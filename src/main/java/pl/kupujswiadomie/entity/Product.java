@@ -15,7 +15,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="product")
@@ -46,13 +49,14 @@ public class Product {
 	
 	private boolean comingFromPL;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Producer producer;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy = "products", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Store> stores;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private User createdBy;
 	
 	private Date created;

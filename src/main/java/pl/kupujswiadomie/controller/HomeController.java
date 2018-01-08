@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import pl.kupujswiadomie.entity.Producer;
+import pl.kupujswiadomie.entity.Product;
 import pl.kupujswiadomie.repository.ProducerRepository;
+import pl.kupujswiadomie.repository.ProductRepository;
 
 @Controller
 public class HomeController {
 	
 	@Autowired
 	private ProducerRepository producerRepo;
+	
+	@Autowired
+	private ProductRepository productRepo;
 
 	@GetMapping("")
 	public String home(Model m) {
@@ -37,5 +42,14 @@ public class HomeController {
 	public List<Producer> getAllProducers() {
 		return this.producerRepo.findAll();
 	}
+
+	@ModelAttribute("availableProducts")
+	public List<Product> getProducts() {
+		return this.productRepo.findAll();
+	}
 	
+	@ModelAttribute("lastProducts")
+	public List<Product> getLastProducts() {
+		return this.productRepo.findAllByCreated();
+	}
 }

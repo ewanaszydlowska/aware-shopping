@@ -12,9 +12,13 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<%@ include file="../jspf/main_menu.jspf"%>
+	<%@ include file="../jspf/categories.jspf"%>
 
 	<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj produkt</a> 
-	<h3>Tu będzie lista produktów...</h3>
+	<ul>Produkty</ul>
+	<c:forEach items="${lastProducts}" var="product">
+			<li><a href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a></li>
+		</c:forEach>	
 
 	<%@ include file="../jspf/footer.jspf"%>
 
