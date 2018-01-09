@@ -16,6 +16,8 @@
 
 	<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj produkt</a>
 
+	<h6><a href="http://localhost:8080/Aware_shopping/category/${product.category.id}">${product.category.name}</a> > 
+		<a href="http://localhost:8080/Aware_shopping/subcategory/${product.subcategory.id}">${product.subcategory.name}</a></h6>
 	<h3>${product.name}</h3>
 	<p>${product.description}</p>
 	
