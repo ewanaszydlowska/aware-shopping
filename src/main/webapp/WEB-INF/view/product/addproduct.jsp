@@ -70,5 +70,5 @@
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
 	
-	<script src="<c:url value='/resources/js/app.js' />" > </script>
+	<script src="<c:url value='/resources/js/category.js' />" > </script>
 

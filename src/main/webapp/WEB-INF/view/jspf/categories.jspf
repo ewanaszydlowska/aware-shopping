@@ -138,15 +138,4 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous"></script>
-<script type="application/javascript">
-	
-	$(function () {
-
-	var subcategory = $('.subcategory');
-	subcategory.addClass('hidden');
-	$('.category').on('click', function() {
-		$(this).next('div').toggleClass('hidden');
-	})
-	    });
-
-</script>
+<script src="<c:url value='/resources/js/categorySidebar.js' />" > </script>
