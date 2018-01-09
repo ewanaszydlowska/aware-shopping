@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.kupujswiadomie.bean.SessionManager;
 import pl.kupujswiadomie.entity.Category;
@@ -71,15 +72,16 @@ public class ProductController {
 		product.setCreated(new Date());
 		this.productRepo.save(product);
 		m.addAttribute("message", "Dodano produkt do bazy.");
-		return "redirect:/";
+		return "redirect:/products";
 	}
 	
 	@GetMapping("/{id}")
-	public String productDetails(@PathVariable int id, Model m) {
+	public String productDetails(Model m, @PathVariable int id, @RequestParam(required = false) String message) {
 		Product product = this.productRepo.findById(id);
 		m.addAttribute("product", product);
 		List<Store> stores = this.storeRepo.findAllByProductId(product.getId());
 		m.addAttribute("stores", stores);
+		m.addAttribute("message", message);
 		return "product/details";
 	}
 	
@@ -94,13 +96,12 @@ public class ProductController {
 			return "product/addproduct";
 		} else {
 			m.addAttribute("message", "Nie możesz edytować tego produktu!");
-//			s.setAttribute("message", "Nie możesz edytować tego produktu!");
 			return "redirect:/product/"+id;
 		}
 	}
 
 	@PostMapping("edit/{id}")
-	public String editPost(@Valid @ModelAttribute Product product, BindingResult bindingResult) {
+	public String editPost(@Valid @ModelAttribute Product product, BindingResult bindingResult, Model m) {
 		if (bindingResult.hasErrors()) {
 			return "product/addproduct";
 		}
@@ -108,6 +109,7 @@ public class ProductController {
 		User u = (User)s.getAttribute("user");
 		product.setCreatedBy(u);
 		this.productRepo.save(product);
+		m.addAttribute("message", "Edytowano produkt");
 		return "redirect:/products";
 	}
 	
@@ -123,7 +125,6 @@ public class ProductController {
 			return "redirect:/products";
 		} else {
 			m.addAttribute("message", "Nie możesz usunąć tego produktu!");
-//			s.setAttribute("message", "Nie możesz edytować tego produktu!");
 			return "redirect:/product/"+id;
 		}
 	}

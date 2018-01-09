@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.kupujswiadomie.entity.Producer;
 import pl.kupujswiadomie.entity.Product;
@@ -29,7 +30,8 @@ public class HomeController {
 	}
 	
 	@GetMapping("/products")
-	public String products() {
+	public String products(Model m, @RequestParam(required = false) String message) {
+		m.addAttribute("message", message);
 		return "product/products";
 	}
 	

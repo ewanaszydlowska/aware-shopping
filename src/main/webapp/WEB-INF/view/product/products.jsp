@@ -11,7 +11,7 @@
 
 <style>
 .hidden {
-  display: none;
+	display: none;
 }
 </style>
 
@@ -22,11 +22,15 @@
 	<%@ include file="../jspf/main_menu.jspf"%>
 	<%@ include file="../jspf/categories.jspf"%>
 
-	<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj produkt</a> 
-	<ul>Produkty</ul>
+	<p>${message}</p>
+	<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj
+		produkt</a>
+	<ul>Produkty
+	</ul>
 	<c:forEach items="${lastProducts}" var="product">
-			<li><a href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a></li>
-		</c:forEach>	
+		<li><a
+			href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a></li>
+	</c:forEach>
 
 	<%@ include file="../jspf/footer.jspf"%>
 
