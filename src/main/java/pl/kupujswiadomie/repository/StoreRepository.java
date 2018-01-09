@@ -12,7 +12,7 @@ public interface StoreRepository extends JpaRepository<Store, Integer> {
 
 	Store findById(int parseInt);
 
-	@Query(value = "select * from store join store_product on store.id=stores_id where products_id=?;", nativeQuery = true)
+	@Query(value = "select * from store join product_store on store.id=stores_id where products_id=?;", nativeQuery = true)
 	List<Store> findAllByProductId(int productId);
 
 }

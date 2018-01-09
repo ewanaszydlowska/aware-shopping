@@ -13,11 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="product")
@@ -49,9 +51,10 @@ public class Product {
 	private boolean comingFromPL;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
+	@Valid
 	private Producer producer;
 	
-	@ManyToMany(mappedBy = "products", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Store> stores;
 	

@@ -36,10 +36,6 @@
 	</c:choose>
 	<p>${message}</p>	
 	
-	
-	
-	
-		
 	<%@ include file="../jspf/footer.jspf"%>
 
 
