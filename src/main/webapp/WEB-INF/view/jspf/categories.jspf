@@ -140,12 +140,6 @@
 	crossorigin="anonymous"></script>
 <script type="application/javascript">
 	
-	
-	
-	
-	
-	
-		
 	$(function () {
 
 	var subcategory = $('.subcategory');
@@ -154,9 +148,5 @@
 		$(this).next('div').toggleClass('hidden');
 	})
 	    });
-	    
-
-
-
 
 </script>
