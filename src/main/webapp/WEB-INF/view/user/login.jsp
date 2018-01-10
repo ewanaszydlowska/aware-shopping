@@ -8,7 +8,9 @@
 <%@ include file="../jspf/header.jspf"%>
 <%@ include file="../jspf/main_menu.jspf"%>
 
-<h3>Zaloguj się, aby móc dodawać produkty!</h3>
+<p>.</p>
+<p>^</p>
+<h3>Zaloguj się:</h3>
 <form:form method="post" modelAttribute="loginData">
 	<p>
 		Nazwa użytkownika:
@@ -22,7 +24,7 @@
 	</p>
 
 	<p>
-		<input type="submit" />
+		<input value="Zatwierdź" type="submit" />
 	</p>
 
 </form:form>

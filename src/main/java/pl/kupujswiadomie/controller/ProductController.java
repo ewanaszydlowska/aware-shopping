@@ -149,7 +149,7 @@ public class ProductController {
 		return this.subcategoryRepo.findAll();
 	}
 	
-	@ModelAttribute("ByFirstCategory")
+	@ModelAttribute("byFirstCategory")
 	public List<Subcategory> getFirstSubcategories() {
 		return this.subcategoryRepo.findByCategoryId();
 	}

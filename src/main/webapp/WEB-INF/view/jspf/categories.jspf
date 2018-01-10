@@ -2,140 +2,219 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<p>Kategorie</p>
 
-<ul>
-	<span class="category">v <a
+<div class="list-group cat">
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/1" class="cat">Dom
 			i ogród</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/1">Wyposażenie</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/2">Przybory
-				kuchenne</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/3">Meble</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/4">Ogród</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/1">Wyposażenie</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/2">Przybory
+				kuchenne</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/3">Meble</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/4">Ogród</a>
+		</div>
 	</div>
-</ul>
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/2" class="cat">Dziecko</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/5">Akcesoria</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/6">Artykuły
-				szkolne</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/7">Odzież
-				i obuwie dziecięce</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/8">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/5">Akcesoria</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/6">Artykuły
+				szkolne</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/7">Odzież
+				i obuwie dziecięce</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/8">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/3" class="cat">Elektronika</a></span>
 
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/9">Komputery</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/10">RTV</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/11">AGD</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/12">Telefony
-				i akcesoria</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/13">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/9">Komputery</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/10">RTV</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/11">AGD</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/12">Telefony
+				i akcesoria</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/13">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/4" class="cat">Kultura
 			i rozrywka</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/14">Gry
-				planszowe</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/15">Gry
-				komputerowe</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/16">Instrumenty</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/17">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/14">Gry
+				planszowe</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/15">Gry
+				komputerowe</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/16">Instrumenty</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/17">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/5" class="cat">Moda</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/18">Odzież</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/19">Obuwie</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/20">Dodatki</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/21">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/18">Odzież</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/19">Obuwie</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/20">Dodatki</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/21">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/6" class="cat">Motoryzacja</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/22">Części
-				samochodowe</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/23">Opony</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/24">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/22">Części
+				samochodowe</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/23">Opony</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/24">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/7" class="cat">Sport
 			i wypoczynek</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/25">Turystyka</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/26">Akcesoria
-				sportowe</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/27">Siłownia
-				i fitness</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/28">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/25">Turystyka</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/26">Akcesoria
+				sportowe</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/27">Siłownia
+				i fitness</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/28">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/8" class="cat">Uroda
 			i zdrowie</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/29">Makijaż</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/30">Kosmetyki
-				pielęgnacyjne</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/31">Leki</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/32">Suplementy
-				diety</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/33">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/29">Makijaż</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/30">Kosmetyki
+				pielęgnacyjne</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/31">Leki</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/32">Suplementy
+				diety</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/33">Inne</a>
+		</div>
 	</div>
-</ul>
 
 
-<ul>
-	<span class="category">v <a
+
+
+	<span class="category list-group-item"> <a
 		href="http://localhost:8080/Aware_shopping/category/9" class="cat">Żywność</a></span>
 	<div class="subcategory">
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/34">Napoje</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/35">Przetwory</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/36">Słodycze
-				i przekąski</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/37">Nabiał</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/38">Produkty
-				zbożowe</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/39">Przyprawy
-				i dodatki</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/40">Wyroby
-				mięsne</a></li>
-		<li><a href="http://localhost:8080/Aware_shopping/subcategory/41">Inne</a></li>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/34">Napoje</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/35">Przetwory</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/36">Słodycze
+				i przekąski</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/37">Nabiał</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/38">Produkty
+				zbożowe</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/39">Przyprawy
+				i dodatki</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/40">Wyroby
+				mięsne</a>
+		</div>
+		<div>
+			<a href="http://localhost:8080/Aware_shopping/subcategory/41">Inne</a>
+		</div>
 	</div>
-</ul>
+</div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
-<script src="<c:url value='/resources/js/categorySidebar.js' />" > </script>
+
+

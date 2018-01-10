@@ -8,19 +8,22 @@
 <%@ include file="../jspf/header.jspf"%>
 <%@ include file="../jspf/main_menu.jspf"%>
 
+<p>.</p>
+<p>^</p>
+<h3>Zarejestruj się, aby móc korzystać z wszystkich dostępnych funkcji!</h3>
 <form:form method="post" modelAttribute="user">
 	<p>
-		Username:
+		Nazwa użytkownika:
 		<form:input type="text" path="username" />
 		<form:errors path="username" />
 	</p>
 	<p>
-		Email:
+		Adres e-mail:
 		<form:input type="text" path="email" />
 		<form:errors path="email" />
 	</p>
 	<p>
-		Password
+		Hasło:
 		<form:input type="password" path="password" />
 		<form:errors path="password" />
 	</p>
@@ -30,7 +33,7 @@
 		<form:errors path="accepted" />
 	</p>
 	<p>
-		<input type="submit" />
+		<input value="Zatwierdź" type="submit" />
 	</p>
 
 </form:form>

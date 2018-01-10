@@ -24,8 +24,8 @@
 		</p>
 		<p>
 			Subkategoria:
-			<form:select type="text" path="subcategory" class="subcategory">
-				<form:options items="${ByFirstCategory}" itemValue="id"
+			<form:select type="text" path="subcategory" class="subcategoryList">
+				<form:options items="${byFirstCategory}" itemValue="id"
 					itemLabel="name" />
 			</form:select>
 			<form:errors path="subcategory" />
@@ -64,11 +64,5 @@
 			<input type="submit" value="Submit" />
 		</p>
 	</form:form>
-
-	<%@ include file="../jspf/footer.jspf"%>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-		crossorigin="anonymous"></script>
 	
-	<script src="<c:url value='/resources/js/category.js' />" > </script>
-
+	<%@ include file="../jspf/footer.jspf"%>

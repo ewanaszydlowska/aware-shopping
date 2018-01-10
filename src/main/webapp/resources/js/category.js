@@ -11,7 +11,7 @@ $(function() {
 		}).done(
 				function(subcategories) {
 					console.log(subcategories);
-					var subcats = $('.subcategory');
+					var subcats = $('.subcategoryList');
 					subcats.empty();
 
 					subcategories.forEach(function(subcategory) {

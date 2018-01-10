@@ -30,7 +30,7 @@ public class SubcategoryController {
 		List<Product> products = this.productRepo.findBySubcategory(subcategory);
 		m.addAttribute("subcategory", subcategory);
 		m.addAttribute("products", products);
-		return "product/category";
+		return "product/subcategory";
 	}
 	
 }
