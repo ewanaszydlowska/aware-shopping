@@ -13,10 +13,8 @@
 
 	<!-- Portfolio Item Heading -->
 	<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj
-			nowego producenta</a>
-	<h1 class="my-4">
-		${producer.name}
-	</h1>
+		nowego producenta</a>
+	<h1 class="my-4">${producer.name}</h1>
 
 	<!-- Portfolio Item Row -->
 	<div class="row">
@@ -42,15 +40,14 @@
 
 	<div class="row">
 
-<c:forEach items="${products}" var="product">
-		<div class="col-md-3 col-sm-6 mb-4">
-		<a
-		href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
-			<a href="#"> <img class="img-fluid"
-				src="http://placehold.it/500x300" alt="" /></a>
-		</div>
-</c:forEach>
-		
+		<c:forEach items="${products}" var="product">
+			<div class="col-md-3 col-sm-6 mb-4">
+				<a href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
+				<a href="#"> <img class="img-fluid"
+					src="http://placehold.it/500x300" alt="" /></a>
+			</div>
+		</c:forEach>
+
 
 	</div>
 	<!-- /.row -->
