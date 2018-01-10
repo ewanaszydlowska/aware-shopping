@@ -2,7 +2,7 @@
 $(function() {
 
 	var baseUrl = 'http://localhost:8080/Aware_shopping/product/show/';
-	var category = $('.category');
+	var category = $('.categoryList');
 
 	category.on('change', function() {
 		var catId = category.val();
