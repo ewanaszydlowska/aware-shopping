@@ -39,6 +39,8 @@
 							href="http://localhost:8080/Aware_shopping/subcategory/${product.subcategory.id}">${product.subcategory.name}</a>
 					</p>
 					<h3 class="card-title">${product.name}</h3>
+					<h4> <a href="http://localhost:8080/Aware_shopping/producer/${product.producer.id}">
+					${product.producer.name} </a></h4>
 					<h4>Produkt polskiego producenta:</h4>
 					<h4>Produkowany w Polsce:</h4>
 					<p class="card-text">${product.description}</p>

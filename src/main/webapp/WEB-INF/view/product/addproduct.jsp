@@ -86,7 +86,7 @@
 							<form:errors path="stores" />
 						</p>
 						<p>
-							<input type="submit" value="Submit" />
+							<input type="submit" value="Dodaj" />
 						</p>
 					</form:form>
 				</div>

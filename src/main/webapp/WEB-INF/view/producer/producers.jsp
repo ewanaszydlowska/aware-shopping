@@ -31,7 +31,7 @@
 
 			<div class="row">
 
-				<c:forEach items="${availableProducers}" var="product">
+				<c:forEach items="${availableProducers}" var="producer">
 
 					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="card h-100">
