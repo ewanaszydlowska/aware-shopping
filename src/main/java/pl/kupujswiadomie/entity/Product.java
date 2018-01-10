@@ -63,6 +63,8 @@ public class Product {
 	
 	private Date created;
 	
+	private String fileUrl;
+	
 	public Product() {
 		super();
 		this.created = new Date();
@@ -154,6 +156,14 @@ public class Product {
 
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
 	}
 	
 }

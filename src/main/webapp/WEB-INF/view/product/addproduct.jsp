@@ -30,7 +30,7 @@
 
 				<div class="card-header">Dodaj produkt</div>
 				<div class="card-body">
-					<form:form method="post" modelAttribute="product">
+					<form:form method="post" modelAttribute="product" enctype="multipart/form-data">
 						<p>
 							Nazwa:
 							<form:input type="text" path="name" />
@@ -52,6 +52,11 @@
 									itemLabel="name" />
 							</form:select>
 							<form:errors path="subcategory" />
+						</p>
+						<p>
+							Zdjęcie:
+							<form:input type="file" path="fileUrl" name="file"/>
+							<form:errors path="description" />
 						</p>
 						<p>
 							Opis:
