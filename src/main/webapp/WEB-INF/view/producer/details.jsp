@@ -12,8 +12,10 @@
 <div class="container">
 
 	<!-- Portfolio Item Heading -->
-	<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj
-		nowego producenta</a>
+	<h3>
+		<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj
+			producenta</a>
+	</h3>
 	<h1 class="my-4">${producer.name}</h1>
 
 	<!-- Portfolio Item Row -->
@@ -49,7 +51,6 @@
 					src="http://placehold.it/500x300" alt="" /></a>
 			</div>
 		</c:forEach>
-
 
 	</div>
 	<!-- /.row -->

@@ -10,16 +10,8 @@
 
 <!-- Page Content -->
 <div class="container">
-
 	<div class="row">
-
-		<div class="col-lg-3">
-			<p>.</p>
-			<p>^</p>
-			<h1 class="my-4">Kupuj świadomie:</h1>
-			<%@ include file="../jspf/categories.jspf"%>
-		</div>
-
+		<%@ include file="../jspf/categories.jspf"%>
 		<!-- /.col-lg-3 -->
 
 		<div class="col-lg-9">

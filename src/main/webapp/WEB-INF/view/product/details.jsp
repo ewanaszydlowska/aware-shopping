@@ -10,27 +10,22 @@
 
 <!-- Page Content -->
 <div class="container">
-
 	<div class="row">
-
-		<div class="col-lg-3">
-			<p>.</p>
-			<p>^</p>
-			<h1 class="my-4">Kupuj świadomie:</h1>
-			<%@ include file="../jspf/categories.jspf"%>
-		</div>
-
+		<%@ include file="../jspf/categories.jspf"%>
 		<!-- /.col-lg-3 -->
 
 		<div class="col-lg-9">
-			<p>.</p>
-			<p>^</p>
-			<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj
-				nowy produkt</a>
+
+			<h3>
+				<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj
+					nowy produkt</a>
+			</h3>
+
 
 			<div class="card mt-4">
 				<img class="card-img-top img-fluid"
-					src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}" alt="image-of-${product.name}" />
+					src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}"
+					alt="image-of-${product.name}" />
 				<div class="card-body">
 					<p>
 						Kategoria: <a
@@ -39,8 +34,11 @@
 							href="http://localhost:8080/Aware_shopping/subcategory/${product.subcategory.id}">${product.subcategory.name}</a>
 					</p>
 					<h3 class="card-title">${product.name}</h3>
-					<h4> <a href="http://localhost:8080/Aware_shopping/producer/${product.producer.id}">
-					${product.producer.name} </a></h4>
+					<h4>
+						<a
+							href="http://localhost:8080/Aware_shopping/producer/${product.producer.id}">
+							${product.producer.name} </a>
+					</h4>
 					<h4>Produkt polskiego producenta:</h4>
 					<h4>Produkowany w Polsce:</h4>
 					<p class="card-text">${product.description}</p>

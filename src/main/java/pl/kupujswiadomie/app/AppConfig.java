@@ -35,8 +35,10 @@ import pl.kupujswiadomie.converter.SubcategoryConverter;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "pl.kupujswiadomie.bean", "pl.kupujswiadomie.controller",
-		"pl.kupujswiadomie.entity" })
+@ComponentScan(basePackages = { "pl.kupujswiadomie.bean", 
+		"pl.kupujswiadomie.controller",
+		"pl.kupujswiadomie.entity",
+		"pl.kupujswiadomie.filters"})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"pl.kupujswiadomie.repository"})
 public class AppConfig extends WebMvcConfigurerAdapter {

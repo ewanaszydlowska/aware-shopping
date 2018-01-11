@@ -26,11 +26,8 @@
 					href="http://localhost:8080/Aware_shopping/producers">Producenci</a>
 				</li>
 
-
-
 				<c:choose>
 					<c:when test="${sessionScope.user==null}">
-
 						<li class="nav-item"><a class="nav-link"
 							href="http://localhost:8080/Aware_shopping/register">Zarejestruj
 								się</a></li>
@@ -41,7 +38,6 @@
 		</div>
 		</c:when>
 		<c:otherwise>
-
 			<li class="nav-item"><a class="nav-link"
 				href="http://localhost:8080/Aware_shopping/${sessionScope.user.username}">Twój
 					profil</a></li>
@@ -49,7 +45,6 @@
 				href="http://localhost:8080/Aware_shopping/logout">Wyloguj</a></li>
 			</ul>
 	</div>
-
 	</c:otherwise>
 	</c:choose>
 

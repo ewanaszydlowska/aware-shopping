@@ -12,22 +12,17 @@
 <div class="container">
 
 	<div class="row">
-
-		<div class="col-lg-3">
-			<p>.</p>
-			<p>^</p>
-			<h1 class="my-4">Kupuj świadomie:</h1>
-			<%@ include file="../jspf/categories.jspf"%>
-		</div>
+		<%@ include file="../jspf/categories.jspf"%>
+		<!-- /.col-lg-3 -->
 
 		<!-- /.col-lg-3 -->
 		<div class="col-lg-9">
-			<p>.</p>
-			<p>^</p>
 			<p>${message}</p>
+			<h3>
+				<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj
+					producenta</a>
+			</h3>
 			<h1>Producenci</h1>
-			<a href="http://localhost:8080/Aware_shopping/producer/add">Dodaj
-			producenta</a>
 
 			<div class="row">
 
