@@ -37,6 +37,8 @@ public class Producer {
 	
 	private Date created;
 	
+	private String fileUrl;
+	
 	public Producer() {
 		super();
 		this.created = new Date();
@@ -88,6 +90,14 @@ public class Producer {
 
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
 	}
 	
 }

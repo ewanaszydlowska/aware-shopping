@@ -83,35 +83,49 @@ public class ProductController {
 
 		// pobranie id
 		int imgId = product.getId();
-		
+
 		// budowanie nazwy
 		String fileName = null;
 		if (!file.isEmpty()) {
 			try {
-				
-				fileName = "product_" + imgId;
-				String extension = FilenameUtils.getExtension(file.getOriginalFilename());
-				byte[] bytes = file.getBytes();
-				BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(new File(
-						"/home/ewa/eclipse-workspace/Aware_shopping/src/main/webapp/resources/uploads/products/" + fileName + "." + extension)));
-				buffStream.write(bytes);
-				buffStream.close();
-				
-				// seter dla url
-				product.setFileUrl(fileName);
-				// zapis db
-				this.productRepo.save(product);
 
-				m.addAttribute("message", "Dodano produkt do bazy.");
-				return "redirect:/products";
+				if (file.getSize() > 131072l) {
+					m.addAttribute("errorMessage", "Za duży rozmiar pliku");
+					return "product/addproduct";
+				}
+				
+				String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+				if (extension.equals("jpg") || extension.equals("jpeg")) {
+
+					fileName = "product_" + imgId + "." + extension;
+					byte[] bytes = file.getBytes();
+					BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(new File(
+							"/home/ewa/eclipse-workspace/Aware_shopping/src/main/webapp/resources/uploads/products/"
+									+ fileName)));
+					buffStream.write(bytes);
+					buffStream.close();
+
+					// seter dla url
+					product.setFileUrl(fileName);
+					// zapis db
+					this.productRepo.save(product);
+
+					m.addAttribute("message", "Dodano produkt do bazy.");
+					return "redirect:/products";
+					
+				} else {
+					m.addAttribute("errorMessage", "Niepoprawny format pliku graficznego.");
+					return "product/addproduct";
+				}
 
 			} catch (Exception e) {
 				return "home";
 			}
 		}
-		m.addAttribute("message", "Dodawanie produktu zakończone niepowodzeniem.");
-		return "home";
-		
+		m.addAttribute("errorMessage", "Brak zdjęcia.");
+		return "product/addproduct";
+
 	}
 
 	@GetMapping("/{id}")
@@ -167,7 +181,7 @@ public class ProductController {
 			return "redirect:/product/" + id;
 		}
 	}
-
+	
 	@ModelAttribute("availableProducers")
 	public List<Producer> getAllProducers() {
 		return this.producerRepo.findAll();

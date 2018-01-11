@@ -30,7 +30,7 @@
 
 			<div class="card mt-4">
 				<img class="card-img-top img-fluid"
-					src="/home/ewa/eclipse-workspace/Aware_shopping/src/main/webapp/resources/uploads/product_${product.id}.jpg" alt="" />
+					src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}" alt="image-of-${product.name}" />
 				<div class="card-body">
 					<p>
 						Kategoria: <a

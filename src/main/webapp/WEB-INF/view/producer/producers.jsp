@@ -31,12 +31,13 @@
 
 			<div class="row">
 
-				<c:forEach items="${availableProducers}" var="producer">
+				<c:forEach items="${availableProducersAsc}" var="producer">
 
 					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="card h-100">
-							<a href="#"><img class="card-img-top"
-								src="http://placehold.it/700x400" alt="" /></a>
+							<a href="http://localhost:8080/Aware_shopping/producer/${producer.id}"><img class="card-img-top"
+								src="${pageContext.request.contextPath}/resources/uploads/producers/${producer.fileUrl}" 
+								alt="image-of-${producer.name}" /></a>
 							<div class="card-body">
 								<h4 class="card-title">
 									<a

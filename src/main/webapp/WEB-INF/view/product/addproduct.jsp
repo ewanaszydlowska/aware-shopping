@@ -30,7 +30,8 @@
 
 				<div class="card-header">Dodaj produkt</div>
 				<div class="card-body">
-					<form:form method="post" modelAttribute="product" enctype="multipart/form-data">
+					<form:form method="post" modelAttribute="product"
+						enctype="multipart/form-data">
 						<p>
 							Nazwa:
 							<form:input type="text" path="name" />
@@ -54,14 +55,15 @@
 							<form:errors path="subcategory" />
 						</p>
 						<p>
-							Zdjęcie:
-							<form:input type="file" path="fileUrl" name="file"/>
+							Zdjęcie: (format .jpg lub .jpeg)
+							<form:input type="file" path="fileUrl" name="file" />
 							<form:errors path="description" />
+							${errorMessage}
 						</p>
 						<p>
-							Opis:
-							<form:input type="textarea" path="description" />
-							<form:errors path="description" />
+							Opis: <span> <form:textarea path="description" /> <form:errors
+									path="description" />
+							</span>
 						</p>
 						<p>
 							Produkowany w Polsce:
@@ -83,12 +85,14 @@
 							<form:errors path="producer" />
 						</p>
 						<p>
-							Punkty, w których produkt jest dostępny:
-							<form:select type="text" path="stores">
-								<form:options items="${availableStores}" itemValue="id"
-									itemLabel="name" multiple="true" />
-							</form:select>
-							<form:errors path="stores" />
+							Punkty, w których produkt jest dostępny: <span>
+						</p>
+						<form:select type="text" path="stores">
+							<form:options items="${availableStores}" itemValue="id"
+								itemLabel="name" multiple="true" />
+						</form:select>
+						<form:errors path="stores" />
+						</span>
 						</p>
 						<p>
 							<input type="submit" value="Dodaj" />

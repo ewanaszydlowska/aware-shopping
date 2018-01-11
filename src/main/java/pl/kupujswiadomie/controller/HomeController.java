@@ -36,22 +36,23 @@ public class HomeController {
 	}
 	
 	@GetMapping("/producers")
-	public String producers() {
+	public String producers(Model m, @RequestParam(required = false) String message) {
+		m.addAttribute("message", message);
 		return "producer/producers";
-	}
-	
-	@ModelAttribute("availableProducers")
-	public List<Producer> getAllProducers() {
-		return this.producerRepo.findAll();
-	}
-
-	@ModelAttribute("availableProducts")
-	public List<Product> getProducts() {
-		return this.productRepo.findAll();
 	}
 	
 	@ModelAttribute("lastProducts")
 	public List<Product> getLastProducts() {
 		return this.productRepo.findAllByCreated();
+	}
+	
+	@ModelAttribute("availableProductsAsc")
+	public List<Product> getAllProductsByNameAsc() {
+		return this.productRepo.findAllByNameAsc();
+	}
+	
+	@ModelAttribute("availableProducersAsc")
+	public List<Producer> getAllProducersByNameAsc() {
+		return this.producerRepo.findAllByNameAsc();
 	}
 }

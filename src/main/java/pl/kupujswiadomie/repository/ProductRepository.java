@@ -17,7 +17,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	
 	Product findById(int id);
 
-	@Query(value = "SELECT * FROM product ORDER BY created DESC LIMIT 15", nativeQuery = true)
+	@Query(value = "SELECT * FROM product ORDER BY created DESC LIMIT 9", nativeQuery = true)
 	List<Product> findAllByCreated();
 	
 	List<Product> findAllByCreatedBy(User createdBy);
@@ -25,4 +25,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	List<Product> findByCategory(Category category);
 
 	List<Product> findBySubcategory(Subcategory subcategory);
+	
+	@Query(value = "SELECT * FROM product ORDER BY name ASC", nativeQuery = true)
+	List<Product> findAllByNameAsc();
 }

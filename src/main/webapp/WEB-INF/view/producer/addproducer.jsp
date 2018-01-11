@@ -31,17 +31,24 @@
 				<div class="card-header">Dodaj producenta</div>
 				<div class="card-body">
 
-					<form:form method="post" modelAttribute="producer">
+					<form:form method="post" modelAttribute="producer"
+						enctype="multipart/form-data">
 						<p>
 							Nazwa:
 							<form:input type="text" path="name" />
 							<form:errors path="name" />
 						</p>
 						<p>
-							Opis:
-							<form:input type="textarea" path="description" />
+							Zdjęcie: (format .jpg lub .jpeg)
+							<form:input type="file" path="fileUrl" name="file" />
 							<form:errors path="description" />
+							${message}
 						</p>
+						<p>Opis:</p>
+						<span> <form:textarea path="description" /> <form:errors
+								path="description" />
+						</span>
+
 						<p>
 							Produkuje w Polsce:
 							<form:checkbox path="producingInPL" />
