@@ -5,6 +5,8 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
 	<div class="container">
+		<p class="m-0 text-center text-white">W razie jakichkolwiek pytań, możesz się z nami kontaktować pod
+			adresem: kupujswiadomie@gmail.com</p>
 		<p class="m-0 text-center text-white">Copyright: kupujswiadomie.pl
 			2018</p>
 	</div>
@@ -19,9 +21,11 @@
 	crossorigin="anonymous"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/category.js">
+	
 </script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/categorySidebar.js">
+	
 </script>
 
 <script

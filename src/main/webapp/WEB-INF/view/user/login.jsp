@@ -8,26 +8,40 @@
 <%@ include file="../jspf/header.jspf"%>
 <%@ include file="../jspf/main_menu.jspf"%>
 
-<p>.</p>
-<p>^</p>
-<h3>Zaloguj się:</h3>
-<form:form method="post" modelAttribute="loginData">
-	<p>
-		Nazwa użytkownika:
-		<form:input type="text" path="username" />
-		<form:errors path="username" />
-	</p>
-	<p>
-		Hasło:
-		<form:input type="password" path="password" />
-		<form:errors path="password" />
-	</p>
+<!-- Page Content -->
+<div class="container">
+	<div class="row">
+		<%@ include file="../jspf/categories.jspf"%>
+		<!-- /.col-lg-3 -->
 
-	<p>
-		<input value="Zatwierdź" type="submit" />
-	</p>
+		<div class="col-lg-9">
+			<h3>Zaloguj się:</h3>
+			<form:form method="post" modelAttribute="loginData">
+				<p>
+					Nazwa użytkownika:
+					<form:input type="text" path="username" />
+					<form:errors path="username" />
+				</p>
+				<p>
+					Hasło:
+					<form:input type="password" path="password" />
+					<form:errors path="password" />
+				</p>
 
-</form:form>
-<p class="error">${message}</p>
+				<p>
+					<input value="Zatwierdź" type="submit" />
+				</p>
+
+			</form:form>
+			<p class="error">${message}</p>
+			
+		</div>
+		<!-- /.col-lg-9 -->
+
+	</div>
+	<!-- /.row -->
+
+</div>
+<!-- /.container -->
 
 <%@ include file="../jspf/footer.jspf"%>

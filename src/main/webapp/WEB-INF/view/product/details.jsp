@@ -39,8 +39,20 @@
 							href="http://localhost:8080/Aware_shopping/producer/${product.producer.id}">
 							${product.producer.name} </a>
 					</h4>
-					<h4>Produkt polskiego producenta:</h4>
-					<h4>Produkowany w Polsce:</h4>
+					<c:choose>
+						<c:when
+							test="${product.producingInPL==true && product.comingFromPL==true}">
+							<h5 class="important">W 100% polski produkt</h5>
+						</c:when>
+						<c:otherwise>
+							<h5>Produkowany w Polsce</h5>
+						</c:otherwise>
+					</c:choose>
+
+
+
+
+
 					<p class="card-text">${product.description}</p>
 					<div class="card-header">Gdzie można dostać ${product.name}:</div>
 					<div class="card-body">

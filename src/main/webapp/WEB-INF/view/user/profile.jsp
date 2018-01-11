@@ -7,9 +7,6 @@
 
 <%@ include file="../jspf/header.jspf"%>
 <%@ include file="../jspf/main_menu.jspf"%>
-
-<p>.</p>
-<p>^</p>
 <h3>Profil użytkownika ${user.username}</h3>
 <p>Adres e-mail: ${user.email}</p>
 <p>Produkty dodane przez użytkownika:</p>

@@ -8,34 +8,49 @@
 <%@ include file="../jspf/header.jspf"%>
 <%@ include file="../jspf/main_menu.jspf"%>
 
-<p>.</p>
-<p>^</p>
-<h3>Zarejestruj się, aby móc korzystać z wszystkich dostępnych funkcji!</h3>
-<form:form method="post" modelAttribute="user">
-	<p>
-		Nazwa użytkownika:
-		<form:input type="text" path="username" />
-		<form:errors path="username" />
-	</p>
-	<p>
-		Adres e-mail:
-		<form:input type="text" path="email" />
-		<form:errors path="email" />
-	</p>
-	<p>
-		Hasło:
-		<form:input type="password" path="password" />
-		<form:errors path="password" />
-	</p>
-	<p>
-		Akceptuję <a href="rules" target="_blank">regulamin:</a>
-		<form:checkbox path="accepted" />
-		<form:errors path="accepted" />
-	</p>
-	<p>
-		<input value="Zatwierdź" type="submit" />
-	</p>
+<!-- Page Content -->
+<div class="container">
+	<div class="row">
+		<%@ include file="../jspf/categories.jspf"%>
+		<!-- /.col-lg-3 -->
 
-</form:form>
+		<div class="col-lg-9">
+			<h3>Zarejestruj się, aby móc korzystać z wszystkich dostępnych
+				funkcji!</h3>
+			<form:form method="post" modelAttribute="user">
+				<p>
+					Nazwa użytkownika:
+					<form:input type="text" path="username" />
+					<form:errors path="username" />
+				</p>
+				<p>
+					Adres e-mail:
+					<form:input type="text" path="email" />
+					<form:errors path="email" />
+				</p>
+				<p>
+					Hasło:
+					<form:input type="password" path="password" />
+					<form:errors path="password" />
+				</p>
+				<p>
+					Akceptuję <a href="rules" target="_blank">regulamin:</a>
+					<form:checkbox path="accepted" />
+					<form:errors path="accepted" />
+				</p>
+				<p>
+					<input value="Zatwierdź" type="submit" />
+				</p>
+
+			</form:form>
+
+		</div>
+		<!-- /.col-lg-9 -->
+
+	</div>
+	<!-- /.row -->
+
+</div>
+<!-- /.container -->
 
 <%@ include file="../jspf/footer.jspf"%>

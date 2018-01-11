@@ -27,7 +27,7 @@ public class SubcategoryController {
 	@GetMapping("/{id}")
 	public String getCategoryProducts(@PathVariable int id, Model m) {
 		Subcategory subcategory = this.subcategoryRepo.findById(id);
-		List<Product> products = this.productRepo.findBySubcategory(subcategory);
+		List<Product> products = this.productRepo.findBySubcategory(id);
 		m.addAttribute("subcategory", subcategory);
 		m.addAttribute("products", products);
 		return "product/subcategory";

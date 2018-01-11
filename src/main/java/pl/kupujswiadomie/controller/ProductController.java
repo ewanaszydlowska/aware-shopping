@@ -182,6 +182,13 @@ public class ProductController {
 		}
 	}
 	
+	@GetMapping("/search")
+	public String searchProducts(@RequestParam String search, Model m) {
+		m.addAttribute("searchResult", this.productRepo.findByGivenString(search));
+		m.addAttribute("search", search);
+		return "product/search";
+	}
+	
 	@ModelAttribute("availableProducers")
 	public List<Producer> getAllProducers() {
 		return this.producerRepo.findAll();

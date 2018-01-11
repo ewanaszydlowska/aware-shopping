@@ -27,7 +27,7 @@ public class CategoryController {
 	@GetMapping("/{id}")
 	public String getCategoryProducts(@PathVariable int id, Model m) {
 		Category category = this.categoryRepo.findById(id); 
-		List<Product> products = this.productRepo.findByCategory(category);
+		List<Product> products = this.productRepo.findByCategory(id);
 		m.addAttribute("category", category);
 		m.addAttribute("products", products);
 		return "product/category";

@@ -15,7 +15,7 @@
 
 		<div class="col-lg-9">
 			<p>${message}</p>
-			
+
 			<div id="carouselExampleIndicators" class="carousel slide my-4"
 				data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -49,13 +49,15 @@
 				</a>
 			</div>
 
+			<h2>Ostatnio dodane produkty</h2>
 			<div class="row">
-
 				<c:forEach items="${lastProducts}" var="product">
 
 					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="card h-100">
-							<a href="http://localhost:8080/Aware_shopping/product/${product.id}"re><img class="card-img-top"
+							<a
+								href="http://localhost:8080/Aware_shopping/product/${product.id}"
+								re><img class="card-img-top"
 								src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}"
 								alt="image-of-${product.name}" /></a>
 							<div class="card-body">
@@ -63,7 +65,7 @@
 									<a
 										href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
 								</h4>
-								<h5>$24.99</h5>
+								<h5>${product.producer.name}</h5>
 								<p class="card-text">${product.description}</p>
 							</div>
 							<div class="card-footer">
