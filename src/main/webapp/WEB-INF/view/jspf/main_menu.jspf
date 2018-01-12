@@ -49,9 +49,9 @@
 	</c:choose>
 
 	<li class="nav-item">
-		<form method="get" action="product/search">
-			<input type="text" name="search" placeholder="Wyszukaj produkt"/>
-			<input type="submit" value="Szukaj" />
+		<form method="get" action="http://localhost:8080/Aware_shopping/product/search">
+			<input type="text" name="search" placeholder="Wyszukaj produkt" /> <input
+				type="submit" value="Szukaj" />
 		</form>
 	</li>
 

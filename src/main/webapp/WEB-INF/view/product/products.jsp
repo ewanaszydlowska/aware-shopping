@@ -70,7 +70,6 @@
 										href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
 								</h4>
 								<h5>${product.producer.name}</h5>
-								<p class="card-text">${product.description}</p>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Kod kreskowy:</small>

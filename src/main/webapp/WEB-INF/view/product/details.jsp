@@ -49,15 +49,11 @@
 						</c:otherwise>
 					</c:choose>
 
-
-
-
-
 					<p class="card-text">${product.description}</p>
 					<div class="card-header">Gdzie można dostać ${product.name}:</div>
 					<div class="card-body">
 						<c:forEach items="${stores}" var="store">
-							${store.name}
+							<p>${store.name}</p>
 						</c:forEach>
 					</div>
 					<div class="card-header">Dodany przez:

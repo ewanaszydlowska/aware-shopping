@@ -17,7 +17,7 @@
 		<div class="col-lg-9">
 			<a href="http://localhost:8080/Aware_shopping/product/add">Dodaj
 				produkt</a>
-			<h1>Efekty wyszukiwania "${search}"</h1>
+			<h3>Efekty wyszukiwania "${search}"</h3>
 
 			<div class="row">
 
@@ -25,15 +25,15 @@
 
 					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="card h-100">
-							<a href="#"><img class="card-img-top"
-								src="http://placehold.it/700x400" alt="" /></a>
+							<a href="http://localhost:8080/Aware_shopping/product/${product.id}"><img class="card-img-top"
+								src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}"
+								alt="image-of-${product.name}" /></a>
 							<div class="card-body">
 								<h4 class="card-title">
 									<a
 										href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
 								</h4>
 								<h5>${product.producer.name}</h5>
-								<p class="card-text">${product.description}</p>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Kod kreskowy:</small>

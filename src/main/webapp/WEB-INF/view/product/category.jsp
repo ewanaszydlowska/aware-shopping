@@ -56,28 +56,38 @@
 
 			<div class="row">
 
-				<c:forEach items="${products}" var="product">
-
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="card h-100">
-							<a href="#"><img class="card-img-top"
-								src="http://placehold.it/700x400" alt="" /></a>
-							<div class="card-body">
-								<h4 class="card-title">
+				<c:choose>
+					<c:when test="${products!=null}">
+						<c:forEach items="${products}" var="product">
+							<div class="col-lg-4 col-md-6 mb-4">
+								<div class="card h-100">
 									<a
-										href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
-								</h4>
-								<h5>${product.producer.name}</h5>
-								<p class="card-text">${product.description}</p>
+										href="${pageContext.request.contextPath}/product/${product.id}">
+										<img class="card-img-top"
+										src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}"
+										alt="image-of-${product.name}" />
+									</a>
+									<div class="card-body">
+										<h4 class="card-title">
+											<a
+												href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
+										</h4>
+										<h5>${product.producer.name}</h5>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Kod kreskowy:</small>
+									</div>
+								</div>
 							</div>
-							<div class="card-footer">
-								<small class="text-muted">Kod kreskowy:</small>
-							</div>
-						</div>
-					</div>
-
-				</c:forEach>
-
+						</c:forEach>
+					</c:when>
+					<c:when test="${products==null}">
+						<h3>
+							W tej kategorii nie ma jeszcze żadnych produktów. Możesz to
+							zmienić, dodając je <a>tutaj</a>
+						</h3>
+					</c:when>
+				</c:choose>
 			</div>
 			<!-- /.row -->
 

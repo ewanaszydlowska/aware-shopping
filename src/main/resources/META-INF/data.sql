@@ -32,16 +32,16 @@ INSERT INTO `category` (`name`) VALUES ('Moda');
 INSERT INTO `category` (`name`) VALUES ('Motoryzacja');
 INSERT INTO `category` (`name`) VALUES ('Sport i wypoczynek');
 INSERT INTO `category` (`name`) VALUES ('Uroda i zdrowie');
-INSERT INTO `category` (`name`) VALUES ('Żywność');
+INSERT INTO `category` (`name`) VALUES ('Zywnosc');
 
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Wyposażenie', 1);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Wyposazenie', 1);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Przybory kuchenne', 1);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Meble', 1);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Ogród', 1);
 
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Akcesoria', 2);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Artykuły szkolne', 2);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Odzież i obuwie dziecięce', 2);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Artykuly szkolne', 2);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Odziez i obuwie dzieciece', 2);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Dziecko - inne', 2);
 
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Komputery', 3);
@@ -55,7 +55,7 @@ INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Gry komputerowe', 4);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Instrumenty', 4);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Kultura i rozrywka - inne', 4);
 
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Odzież', 5);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Odziez', 5);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Obuwie', 5);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Dodatki', 5);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Moda - inne', 5);
@@ -66,21 +66,21 @@ INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Motoryzacja - inne', 
 
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Turystyka', 7);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Akcesoria sportowe', 7);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Siłownia i fitness', 7);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Silownia i fitness', 7);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Sport i wypoczynek - inne', 7);
 
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Makijaż', 8);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Kosmetyki pielęgnacyjne', 8);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Makijaz', 8);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Kosmetyki pielegnacyjne', 8);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Leki', 8);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Suplementy diety', 8);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Zdrowie i uroda - inne', 8);
 
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Napoje', 9);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Przetwory', 9);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Słodycze i przekąski', 9);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Nabiał', 9);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Produkty zbożowe', 9);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Slodycze i przekaski', 9);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Nabial', 9);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Produkty zbozowe', 9);
 INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Przyprawy i dodatki', 9);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Wyroby mięsne', 9);
-INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Żywność - inne', 9);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Wyroby miesne', 9);
+INSERT INTO `subcategory` (`name`, `category_id`) VALUES ('Zywnosc - inne', 9);
 
