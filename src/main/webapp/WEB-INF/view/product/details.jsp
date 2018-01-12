@@ -61,7 +61,7 @@
 					<div class="card-body">
 						<c:choose>
 							<c:when
-								test="${sessionScope.user.username==product.createdBy.username || sessionScope.user.isAdmin==true}">
+								test="${sessionScope.user.username==product.createdBy.username || sessionScope.user.admin==true}">
 								<a
 									href="http://localhost:8080/Aware_shopping/product/edit/${product.id}">Edytuj
 									produkt</a>

@@ -25,7 +25,7 @@
 </c:choose>
 
 <c:choose>
-	<c:when test="${sessionScope.user.isAdmin==true}">
+	<c:when test="${sessionScope.user.admin==true}">
 		<p>
 		<a href="http://localhost:8080/Aware_shopping/user/delete/${user.id}">Usuń
 			użytkownika</a>

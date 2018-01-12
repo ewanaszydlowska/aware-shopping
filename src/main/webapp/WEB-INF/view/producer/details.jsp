@@ -36,7 +36,7 @@
 			</ul>
 			<c:choose>
 				<c:when
-					test="${sessionScope.user.isAdmin==true}">
+					test="${sessionScope.user.admin==true}">
 					<a
 						href="http://localhost:8080/Aware_shopping/producer/edit/${producer.id}">Edytuj
 						producenta</a>
@@ -59,7 +59,8 @@
 			<div class="col-md-3 col-sm-6 mb-4">
 				<a href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a>
 				<a href="#"> <img class="img-fluid"
-					src="http://placehold.it/500x300" alt="" /></a>
+					src="${pageContext.request.contextPath}/resources/uploads/products/${product.fileUrl}"
+					alt="image-of-${product.name}" /></a>
 			</div>
 		</c:forEach>
 
