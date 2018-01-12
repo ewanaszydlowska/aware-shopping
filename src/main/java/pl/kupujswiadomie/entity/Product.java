@@ -54,7 +54,7 @@ public class Product {
 	@Valid
 	private Producer producer;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Store> stores;
 	
