@@ -34,6 +34,17 @@
 				<li>Polski producent</li>
 				<li>Produkuje w Polsce</li>
 			</ul>
+			<c:choose>
+				<c:when
+					test="${sessionScope.user.isAdmin==true}">
+					<a
+						href="http://localhost:8080/Aware_shopping/producer/edit/${producer.id}">Edytuj
+						producenta</a>
+					<a
+						href="http://localhost:8080/Aware_shopping/producer/delete/${producer.id}">Usuń
+						producenta</a>
+				</c:when>
+			</c:choose>
 		</div>
 
 	</div>

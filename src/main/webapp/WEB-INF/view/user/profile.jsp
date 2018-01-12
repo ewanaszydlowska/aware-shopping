@@ -9,15 +9,33 @@
 <%@ include file="../jspf/main_menu.jspf"%>
 <h3>Profil użytkownika ${user.username}</h3>
 <p>Adres e-mail: ${user.email}</p>
+
+<c:choose>
+	<c:when test="${sessionScope.user.username==user.username}">
+		<p>
+			<a
+				href="http://localhost:8080/Aware_shopping/user/edit/${user.id}">Edytuj
+				swoje dane</a>
+		</p>
+		<p>
+			<a href="http://localhost:8080/Aware_shopping/user/delete/${user.id}">Usuń
+				konto</a>
+		</p>
+	</c:when>
+</c:choose>
+
+<c:choose>
+	<c:when test="${sessionScope.user.isAdmin==true}">
+		<p>
+		<a href="http://localhost:8080/Aware_shopping/user/delete/${user.id}">Usuń
+			użytkownika</a>
+		</p>
+	</c:when>
+</c:choose>
+
 <p>Produkty dodane przez użytkownika:</p>
 <c:forEach items="${products}" var="product">
 	<li><a
 		href="http://localhost:8080/Aware_shopping/product/${product.id}">${product.name}</a></li>
 </c:forEach>
-
-<p>
-	<a
-		href="http://localhost:8080/Aware_shopping/edituser/${user.username}">Edytuj
-		hasło</a>
-</p>
 <%@ include file="../jspf/footer.jspf"%>

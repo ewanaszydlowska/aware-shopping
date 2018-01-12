@@ -7,4 +7,6 @@ import pl.kupujswiadomie.entity.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 	User findOneByUsername(String email);
+
+	User findById(int id);
 }

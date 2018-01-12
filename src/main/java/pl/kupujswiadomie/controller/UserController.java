@@ -3,6 +3,7 @@ package pl.kupujswiadomie.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,10 @@ public class UserController {
 			return "redirect:/register";
 		}
 		this.userRepo.save(user);
+		if(user.getId() == 1) {
+			user.setAdmin(true);
+			this.userRepo.save(user);
+		}
 		return "redirect:/";
 	}
 	
@@ -86,10 +91,44 @@ public class UserController {
 		return "user/profile";
 	}
 	
-	@GetMapping("/edituser/{username}")
-	public String editPassword(@PathVariable int id) {
+	@GetMapping("/user/edit/{id}")
+	@Transactional
+	public String editUser(Model m, @PathVariable int id) {
+		HttpSession s = SessionManager.session();
+		User editUser = this.userRepo.findById(id);
+		User activeUser = (User) s.getAttribute("user");
+		if (activeUser.getUsername().equals(editUser.getUsername())) {
+			m.addAttribute("user", editUser);
+			return "user/register";
+		}
 		
 		return "user/edit";
+	}
+	
+	@PostMapping("/user/edit/{id}")
+	public String editPost(@Valid @ModelAttribute User user, BindingResult bindingResult, Model m) {
+		if (bindingResult.hasErrors()) {
+			return "user/register";
+		}
+		this.userRepo.save(user);
+		m.addAttribute("message", "Edytowano");
+		return "redirect:/";
+	}
+
+	@GetMapping("/delete/{id}")
+	@Transactional
+	public String delete(Model m, @PathVariable int id) {
+		HttpSession s = SessionManager.session();
+		User deleteUser = this.userRepo.findById(id);
+		User activeUser = (User) s.getAttribute("user");
+		if (activeUser.getUsername().equals(deleteUser.getUsername()) || activeUser.isAdmin() == true) {
+			this.userRepo.delete(deleteUser);
+			m.addAttribute("message", "Usunięto użytkownika.");
+			return "redirect:/";
+		} else {
+			m.addAttribute("message", "Nie możesz usunąć tego użytkownika!");
+			return "redirect:/";
+		}
 	}
 
 }

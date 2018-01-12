@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import pl.kupujswiadomie.bean.SessionManager;
 import pl.kupujswiadomie.entity.Producer;
 import pl.kupujswiadomie.entity.Product;
+import pl.kupujswiadomie.entity.User;
 import pl.kupujswiadomie.repository.ProducerRepository;
 import pl.kupujswiadomie.repository.ProductRepository;
 
@@ -121,9 +122,16 @@ public class ProducerController {
 	@GetMapping("edit/{id}")
 	@Transactional
 	public String edit(Model m, @PathVariable int id) {
+		HttpSession s = SessionManager.session();
+		User activeUser = (User) s.getAttribute("user");
 		Producer producer = this.producerRepo.findById(id);
-		m.addAttribute("producer", producer);
-		return "producer/addproducer";
+		if (activeUser.isAdmin() == true) {
+			m.addAttribute("producer", producer);
+			return "producer/addproducer";
+		} else {
+			m.addAttribute("message", "Nie możesz edytować tego producenta!");
+			return "redirect:/producer/" + id;
+		}
 	}
 
 	@PostMapping("edit/{id}")
@@ -133,5 +141,21 @@ public class ProducerController {
 		}
 		this.producerRepo.save(producer);
 		return "redirect:/producers";
+	}
+
+	@GetMapping("delete/{id}")
+	@Transactional
+	public String delete(Model m, @PathVariable int id) {
+		HttpSession s = SessionManager.session();
+		User activeUser = (User) s.getAttribute("user");
+		Producer producer = this.producerRepo.findById(id);
+		if (activeUser.isAdmin() == true) {
+			this.producerRepo.delete(producer);
+			m.addAttribute("message", "Usunięto producenta.");
+			return "redirect:/producers";
+		} else {
+			m.addAttribute("message", "Nie możesz usunąć tego producenta!");
+			return "redirect:/producer/" + id;
+		}
 	}
 }

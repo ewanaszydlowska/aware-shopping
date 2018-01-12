@@ -30,20 +30,24 @@
 
 					<div class="col-lg-4 col-md-6 mb-4">
 						<div class="card h-100">
-							<a href="http://localhost:8080/Aware_shopping/producer/${producer.id}"><img class="card-img-top"
-								src="${pageContext.request.contextPath}/resources/uploads/producers/${producer.fileUrl}" 
+							<a
+								href="http://localhost:8080/Aware_shopping/producer/${producer.id}"><img
+								class="card-img-top"
+								src="${pageContext.request.contextPath}/resources/uploads/producers/${producer.fileUrl}"
 								alt="image-of-${producer.name}" /></a>
 							<div class="card-body">
 								<h4 class="card-title">
 									<a
 										href="http://localhost:8080/Aware_shopping/producer/${producer.id}">${producer.name}</a>
 								</h4>
-								<h5>...</h5>
-								<p class="card-text">${product.description}</p>
+								<c:choose>
+									<c:when test="${producer.comingFromPL==true}">
+										<p class="important">Polski producent</p>
+									</c:when>
+								</c:choose>
+
 							</div>
-							<div class="card-footer">
-								<small class="text-muted"></small>
-							</div>
+
 						</div>
 					</div>
 
@@ -63,7 +67,7 @@
 
 
 <%@ include file="../jspf/footer.jspf"%>
-		
+
 
 
 

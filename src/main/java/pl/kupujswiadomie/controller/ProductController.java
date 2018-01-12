@@ -93,7 +93,7 @@ public class ProductController {
 					m.addAttribute("errorMessage", "Za duży rozmiar pliku");
 					return "product/addproduct";
 				}
-				
+
 				String extension = FilenameUtils.getExtension(file.getOriginalFilename());
 
 				if (extension.equals("jpg") || extension.equals("jpeg")) {
@@ -113,7 +113,7 @@ public class ProductController {
 
 					m.addAttribute("message", "Dodano produkt do bazy.");
 					return "redirect:/products";
-					
+
 				} else {
 					m.addAttribute("errorMessage", "Niepoprawny format pliku graficznego.");
 					return "product/addproduct";
@@ -138,13 +138,13 @@ public class ProductController {
 		return "product/details";
 	}
 
-	@GetMapping("edit/{id}")
+	@GetMapping("/edit/{id}")
 	@Transactional
 	public String edit(Model m, @PathVariable int id) {
 		HttpSession s = SessionManager.session();
 		User activeUser = (User) s.getAttribute("user");
 		Product product = this.productRepo.findById(id);
-		if (activeUser.getUsername().equals(product.getCreatedBy().getUsername())) {
+		if (activeUser.getUsername().equals(product.getCreatedBy().getUsername()) || activeUser.isAdmin() == true) {
 			m.addAttribute("product", product);
 			return "product/addproduct";
 		} else {
@@ -153,26 +153,74 @@ public class ProductController {
 		}
 	}
 
-	@PostMapping("edit/{id}")
-	public String editPost(@Valid @ModelAttribute Product product, BindingResult bindingResult, Model m) {
+	@PostMapping("/edit/{id}")
+	public String editPost(@Valid @ModelAttribute Product product, BindingResult bindingResult, Model m,
+			@RequestParam("fileUrl") MultipartFile file) {
 		if (bindingResult.hasErrors()) {
 			return "product/addproduct";
 		}
+
 		HttpSession s = SessionManager.session();
 		User u = (User) s.getAttribute("user");
 		product.setCreatedBy(u);
+		product.setFileUrl(null);
+
+		// zapis do bazy produktu
 		this.productRepo.save(product);
-		m.addAttribute("message", "Edytowano produkt");
-		return "redirect:/products";
+
+		// pobranie id
+		int imgId = product.getId();
+
+		// budowanie nazwy
+		String fileName = null;
+		if (!file.isEmpty()) {
+			try {
+
+				if (file.getSize() > 131072l) {
+					m.addAttribute("errorMessage", "Za duży rozmiar pliku");
+					return "product/addproduct";
+				}
+
+				String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+				if (extension.equals("jpg") || extension.equals("jpeg")) {
+
+					fileName = "product_edit_" + imgId + "." + extension;
+					byte[] bytes = file.getBytes();
+					BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(new File(
+							"/home/ewa/eclipse-workspace/Aware_shopping/src/main/webapp/resources/uploads/products/"
+									+ fileName)));
+					buffStream.write(bytes);
+					buffStream.close();
+
+					// seter dla url
+					product.setFileUrl(fileName);
+					// zapis db
+					this.productRepo.save(product);
+
+					m.addAttribute("message", "Edytowano produkt");
+					return "redirect:/products";
+
+				} else {
+					m.addAttribute("errorMessage", "Niepoprawny format pliku graficznego.");
+					return "product/addproduct";
+				}
+
+			} catch (Exception e) {
+				return "home";
+			}
+		}
+		m.addAttribute("errorMessage", "Brak zdjęcia.");
+		return "product/addproduct";
 	}
 
-	@GetMapping("delete/{id}")
+	@GetMapping("/delete/{id}")
 	@Transactional
 	public String delete(Model m, @PathVariable int id) {
 		HttpSession s = SessionManager.session();
 		User activeUser = (User) s.getAttribute("user");
 		Product product = this.productRepo.findById(id);
-		if (activeUser.getUsername().equals(product.getCreatedBy().getUsername())) {
+		if (activeUser.getUsername().equals(product.getCreatedBy().getUsername()) || activeUser.isAdmin() == true) {
 			this.productRepo.delete(product);
 			m.addAttribute("message", "Usunięto wybrany produkt.");
 			return "redirect:/products";
@@ -181,14 +229,14 @@ public class ProductController {
 			return "redirect:/product/" + id;
 		}
 	}
-	
+
 	@GetMapping("/search")
 	public String searchProducts(@RequestParam String search, Model m) {
 		m.addAttribute("searchResult", this.productRepo.findByGivenString(search));
 		m.addAttribute("search", search);
 		return "product/search";
 	}
-	
+
 	@ModelAttribute("availableProducers")
 	public List<Producer> getAllProducers() {
 		return this.producerRepo.findAll();
