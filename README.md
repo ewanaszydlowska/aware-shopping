@@ -24,4 +24,4 @@ Reviews<br />
 Messages<br />
 Product rating<br />
 
-![alt text](http://localhost:8080/Aware_shopping/resources/uploads/products/product_4.jpg)
+![alt text](http://Aware_shopping/resources/uploads/products/product_4.jpg)
