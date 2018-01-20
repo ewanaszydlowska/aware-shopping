@@ -13,30 +13,28 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="review")
+@Table(name = "review")
 public class Review {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private Date created;
-	
+
 	@NotBlank
 	@Size(min = 10, max = 200)
 	private String text;
-	
+
 	@ManyToOne
 	private Product product;
-	
-	@ManyToOne
-	private User user;
-	
+
+	private String username;
+
 	public Review() {
 		super();
-		this.created = new Date();
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -69,12 +67,12 @@ public class Review {
 		this.product = product;
 	}
 
-	public User getUser() {
-		return user;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	
+
 }

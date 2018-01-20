@@ -155,12 +155,9 @@ public class ProductController {
 		HttpSession s = SessionManager.session();
 		User u = (User) s.getAttribute("user");
 		if (u.getUsername() != null)
-			review.setUser(u);
+			review.setUsername(u.getUsername());
 		else {
-			User anonymousUser = new User();
-			anonymousUser.setUsername("Anonim");
-			anonymousUser.setId(0);
-			review.setUser(anonymousUser);
+			review.setUsername("Anonim");
 		}
 		review.setCreated(new Date());
 		review.setProduct(this.productRepo.findById(id));

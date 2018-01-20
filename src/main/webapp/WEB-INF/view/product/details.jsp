@@ -89,7 +89,7 @@
 							<c:forEach items="${productReviews}" var="review">
 								<p>${review.text}</p>
 								<small class="text-muted">Opublikowano przez
-									${review.user.username} o ${review.created}</small>
+									${review.username} o ${review.created}</small>
 								<hr>
 							</c:forEach>
 						</c:otherwise>
