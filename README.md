@@ -24,4 +24,12 @@ Reviews<br />
 Messages<br />
 Product rating<br />
 
-![Alt text](src/main/webapp/resources/uploads/products/product_3.jpg?raw=true "Title")
+![Alt text](demo/homepage.png?raw=true "Homepage")
+
+![Alt text](demo/product1.png?raw=true "Homepage")
+
+![Alt text](demo/product2.png?raw=true "Homepage")
+
+![Alt text](demo/addingproduct.png?raw=true "Homepage")
+
+![Alt text](demo/producers.png?raw=true "Homepage")
