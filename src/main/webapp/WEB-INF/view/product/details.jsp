@@ -94,7 +94,8 @@
 							</c:forEach>
 						</c:otherwise>
 					</c:choose>
-					<a href="#" class="btn btn-success">Zostaw komentarz</a>
+
+					<%@ include file="../jspf/addreview.jspf"%>
 				</div>
 
 

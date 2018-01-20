@@ -27,12 +27,14 @@ import pl.kupujswiadomie.bean.SessionManager;
 import pl.kupujswiadomie.entity.Category;
 import pl.kupujswiadomie.entity.Producer;
 import pl.kupujswiadomie.entity.Product;
+import pl.kupujswiadomie.entity.Review;
 import pl.kupujswiadomie.entity.Store;
 import pl.kupujswiadomie.entity.Subcategory;
 import pl.kupujswiadomie.entity.User;
 import pl.kupujswiadomie.repository.CategoryRepository;
 import pl.kupujswiadomie.repository.ProducerRepository;
 import pl.kupujswiadomie.repository.ProductRepository;
+import pl.kupujswiadomie.repository.ReviewRepository;
 import pl.kupujswiadomie.repository.StoreRepository;
 import pl.kupujswiadomie.repository.SubcategoryRepository;
 
@@ -55,6 +57,9 @@ public class ProductController {
 	@Autowired
 	private SubcategoryRepository subcategoryRepo;
 
+	@Autowired
+	private ReviewRepository reviewRepo;
+	
 	@GetMapping("/add")
 	public String addProduct(Model m) {
 		HttpSession s = SessionManager.session();
@@ -135,6 +140,30 @@ public class ProductController {
 		List<Store> stores = this.storeRepo.findAllByProductId(product.getId());
 		m.addAttribute("stores", stores);
 		m.addAttribute("message", message);
+		m.addAttribute("review", new Review());
+		return "product/details";
+	}
+	
+	@PostMapping("/{id}")
+	public String addReviewPost(Model m, @Valid @ModelAttribute Review review, BindingResult bindingResult, 
+								@PathVariable int id) {
+		if (bindingResult.hasErrors()) {
+			return "redirect:/product/" + id;
+		}
+
+		HttpSession s = SessionManager.session();
+		User u = (User) s.getAttribute("user");
+		if (u.getUsername() != null)
+			review.setUser(u);
+		else {
+			User anonymousUser = new User();
+			anonymousUser.setUsername("Anonim");
+			review.setUser(anonymousUser);
+		}
+		review.setCreated(new Date());
+		review.setProduct(this.productRepo.findById(id));
+		
+		this.reviewRepo.save(review);
 		return "product/details";
 	}
 
