@@ -24,4 +24,5 @@ Reviews<br />
 Messages<br />
 Product rating<br />
 
-![alt text](http://Aware_shopping/resources/uploads/products/product_4.jpg)
+![Alt text](aware-shopping/src/main/webapp/resources/uploads/products/product_3.jpg
+?raw=true "Title")
