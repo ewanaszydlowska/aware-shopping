@@ -23,3 +23,5 @@ Maven<br />
 Reviews<br />
 Messages<br />
 Product rating<br />
+
+![Alt text](src/main/webapp/resources/uploads/products/product_3.jpg?raw=true "Title")
