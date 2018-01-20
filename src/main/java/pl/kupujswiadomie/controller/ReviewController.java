@@ -37,13 +37,4 @@ public class ReviewController {
 	@Autowired
 	private ReviewRepository reviewRepo;
 		
-//	@PostMapping("/add")
-//	public String addProducerPost(Model m, @Valid @ModelAttribute Review review, BindingResult bindingResult) {
-//		if (bindingResult.hasErrors()) {
-//			return "redirect:/";
-//		}
-//
-//		this.reviewRepo.save(review);
-//		return "producer/addproducer";
-//	}
 }
