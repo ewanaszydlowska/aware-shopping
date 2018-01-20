@@ -141,6 +141,7 @@ public class ProductController {
 		m.addAttribute("stores", stores);
 		m.addAttribute("message", message);
 		m.addAttribute("review", new Review());
+		m.addAttribute("productReviews", this.reviewRepo.findAllByProductId(id));
 		return "product/details";
 	}
 	
@@ -158,6 +159,7 @@ public class ProductController {
 		else {
 			User anonymousUser = new User();
 			anonymousUser.setUsername("Anonim");
+			anonymousUser.setId(0);
 			review.setUser(anonymousUser);
 		}
 		review.setCreated(new Date());
