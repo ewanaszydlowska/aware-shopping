@@ -21,6 +21,7 @@ Maven<br />
 Reviews - done<br />
 Messages<br />
 Product rating<br />
+Implementing UI Design with new technologies.<br/>
 
 Here are some screenshots of my app:<br />
 
